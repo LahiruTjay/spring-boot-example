@@ -84,49 +84,4 @@ public class CustomAuthManager implements AuthenticationManager {
 
 	}
 
-	/*
-	 * private UsernamePasswordAuthenticationToken fromUserDetails(SystemUser
-	 * user) {
-	 * 
-	 * String defaultRole = user.getDefaultRole();
-	 * 
-	 * if (defaultRole != null) {
-	 * 
-	 * System.out.
-	 * println("UsernamePasswordAuthenticationToken currentRole != null)");
-	 * 
-	 * // Need to get the authorities for the current role and grant them Role
-	 * role = roleRepository.findByRoleName(defaultRole);
-	 * 
-	 * if (role != null) {
-	 * 
-	 * System.out.println("UsernamePasswordAuthenticationToken role != null)");
-	 * List<RoleAuthority> roleAuthorities =
-	 * roleAuthorityRepository.findAllByRole(role);
-	 * 
-	 * Set<GrantedAuthority> grantedAuthoritySet = new
-	 * HashSet<GrantedAuthority>();
-	 * 
-	 * for (RoleAuthority roleAuthority : roleAuthorities) {
-	 * 
-	 * System.out.println("authority to be granted " +
-	 * roleAuthority.getAuthority()); grantedAuthoritySet.add(new
-	 * SimpleGrantedAuthority(roleAuthority.getAuthority())); }
-	 * 
-	 * return new UsernamePasswordAuthenticationToken(user.getUsername(),
-	 * user.getPassword(), grantedAuthoritySet);
-	 * 
-	 * } else {
-	 * 
-	 * System.out.println("UsernamePasswordAuthenticationToken role == null)");
-	 * 
-	 * throw new CurrentRoleNotFoundException(); }
-	 * 
-	 * } else { System.out.
-	 * println("UsernamePasswordAuthenticationToken currentRole == null)");
-	 * throw new CurrentRoleNotFoundException(); }
-	 * 
-	 * }
-	 */
-
 }
