@@ -28,19 +28,8 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
 		http.csrf().disable().authorizeRequests().antMatchers("/p/*").permitAll()
 
-				// CORE BANK MOCK URLS
-				.antMatchers(HttpMethod.GET, "/validate/*/*/*").permitAll().antMatchers(HttpMethod.POST, "/actcreate")
-				.permitAll().antMatchers(HttpMethod.GET, "/accbalance/*/*").permitAll()
-				.antMatchers(HttpMethod.POST, "/fundtrf").permitAll()
-
 				.antMatchers(HttpMethod.POST, "/api/v1.0/users").permitAll()
 				.antMatchers(HttpMethod.POST, "/api/v1.0/passwords").permitAll()
-
-				.antMatchers(HttpMethod.GET, "/api/v1.0/fund/transferstr").permitAll()
-				.antMatchers(HttpMethod.GET, "/api/v1.0/account/validatestr").permitAll()
-				.antMatchers(HttpMethod.GET, "/api/v1.0/account/balancestr").permitAll()
-				.antMatchers(HttpMethod.GET, "/api/v1.0/account/createstr").permitAll()
-				.antMatchers(HttpMethod.GET, "/api/v1.0/server").permitAll()
 
 				.anyRequest().authenticated().and().authorizeRequests();
 

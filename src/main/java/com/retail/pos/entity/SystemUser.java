@@ -22,9 +22,9 @@ public class SystemUser implements Serializable {
 	private Integer id;
 
 	private String username;
-	
+
 	private String password;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	private Role role;
 

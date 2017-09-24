@@ -17,7 +17,7 @@ public class Role {
 	private int id;
 
 	private String roleName;
-	
+
 	private Date createdDate;
 
 	private Date lastUpdatedDate;

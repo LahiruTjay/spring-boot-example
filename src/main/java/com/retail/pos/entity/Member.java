@@ -11,11 +11,11 @@ import javax.persistence.Table;
 public class Member {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	
+
 	private String name;
-	
+
 	private String email;
 
 	public Integer getId() {
@@ -41,7 +41,5 @@ public class Member {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	
 
 }

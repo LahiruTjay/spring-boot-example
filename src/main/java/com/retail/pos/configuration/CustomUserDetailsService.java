@@ -47,7 +47,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 
 			SystemUser user = userRepository.findByUsernameIgnoreCase(username);
 
-			return new User(user.getUsername(),user.getPassword() , getGrantedAuthoritiesForUser(user));
+			return new User(user.getUsername(), user.getPassword(), getGrantedAuthoritiesForUser(user));
 
 		} catch (UsernameNotFoundException e) {
 			e.printStackTrace();

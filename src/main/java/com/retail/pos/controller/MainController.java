@@ -13,17 +13,17 @@ public class MainController {
 
 	@Autowired
 	MemberRepository memberRepo;
-	
-	@PreAuthorize ("hasRole('ROLE_TWO')")
+
+	@PreAuthorize("hasRole('ROLE_TWO')")
 	@RequestMapping(value = "/test", method = RequestMethod.GET)
 	public String test() {
 		return "working";
 	}
-	
-	@PreAuthorize ("hasRole('ROLE_ONE')")
+
+	@PreAuthorize("hasRole('ROLE_ONE')")
 	@RequestMapping(value = "/test1", method = RequestMethod.GET)
 	public String authTest() {
 		return "working";
 	}
-	
+
 }
