@@ -16,6 +16,8 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public void save(SystemUserDto systemUserDto) {
 		
+		System.out.println(systemUserDto.getFirstName());
+		
 		//TODO Add the implementation
 		
 	}

@@ -28,8 +28,8 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
 
 		http.csrf().disable().authorizeRequests().antMatchers("/p/*").permitAll()
 
-				.antMatchers(HttpMethod.POST, "/api/v1.0/users").permitAll()
-				.antMatchers(HttpMethod.POST, "/api/v1.0/passwords").permitAll()
+				.antMatchers(HttpMethod.POST, "/users").permitAll()
+				.antMatchers(HttpMethod.POST, "/passwords").permitAll()
 
 				.anyRequest().authenticated().and().authorizeRequests();
 

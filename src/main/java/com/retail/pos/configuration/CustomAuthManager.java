@@ -81,7 +81,6 @@ public class CustomAuthManager implements AuthenticationManager {
 		} else {
 			throw new CurrentRoleNotFoundException();
 		}
-
 	}
 
 }
