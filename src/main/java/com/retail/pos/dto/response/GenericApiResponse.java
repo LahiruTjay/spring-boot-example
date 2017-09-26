@@ -1,18 +1,19 @@
 package com.retail.pos.dto.response;
 
-public class ApiResponse {
+public class GenericApiResponse {
 
 	private String code;
 
 	private String message;
 
 	private Object data;
-
-	public ApiResponse() {
+	
+	public GenericApiResponse(String code, String message) {
+		this.code = code;
+		this.message = message;
 	}
 
-	public ApiResponse(String code, String message, Object data) {
-		super();
+	public GenericApiResponse(String code, String message, Object data) {
 		this.code = code;
 		this.message = message;
 		this.data = data;

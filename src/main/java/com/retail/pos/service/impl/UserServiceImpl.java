@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.retail.pos.dto.request.SystemUserDto;
-import com.retail.pos.dto.response.ApiResponse;
+import com.retail.pos.dto.response.GenericApiResponse;
 import com.retail.pos.entity.Role;
 import com.retail.pos.entity.SystemUser;
 import com.retail.pos.mapper.toEntity.DtoToEntityUser;
@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 	RoleService roleService;
 
 	@Override
-	public ApiResponse save(SystemUserDto systemUserDto) {
+	public GenericApiResponse save(SystemUserDto systemUserDto) {
 
 		try {
 			SystemUser existingUser = userRepository.findByUsername(systemUserDto.getUsername());
@@ -32,7 +32,10 @@ public class UserServiceImpl implements UserService {
 				Role role = roleService.findRoleById(systemUserDto.getRoleId());
 
 				SystemUser systemUser = DtoToEntityUser.getUser(systemUserDto, role);
+				
 				// userRepository.save(systemUser);
+				
+				return new GenericApiResponse("", "", systemUser);
 
 			} else {
 
