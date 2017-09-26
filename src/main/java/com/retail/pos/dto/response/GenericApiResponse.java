@@ -7,7 +7,7 @@ public class GenericApiResponse {
 	private String message;
 
 	private Object data;
-	
+
 	public GenericApiResponse(String code, String message) {
 		this.code = code;
 		this.message = message;

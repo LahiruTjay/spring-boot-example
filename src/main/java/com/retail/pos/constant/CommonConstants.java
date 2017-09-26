@@ -9,5 +9,4 @@ public class CommonConstants {
 	public static final String USERNAME_ALREADY_AVAILABLE = "Username already available";
 	public static final String USER_SUCCESSFULLY_CREATED = "User successfully created";
 
-
 }

@@ -5,7 +5,7 @@ import com.retail.pos.entity.Role;
 import com.retail.pos.entity.SystemUser;
 
 public class DtoToEntityUser {
-	
+
 	public static SystemUser getUser(SystemUserDto systemUserDto, Role role) {
 		SystemUser systemUser = new SystemUser();
 		systemUser.setUsername(systemUserDto.getUsername());

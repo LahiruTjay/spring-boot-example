@@ -2,7 +2,9 @@ package com.retail.pos.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.retail.pos.constant.CommonConstants;
 import com.retail.pos.dto.request.SystemUserDto;
 import com.retail.pos.dto.response.GenericApiResponse;
 import com.retail.pos.entity.Role;
@@ -22,6 +24,7 @@ public class UserServiceImpl implements UserService {
 	RoleService roleService;
 
 	@Override
+	@Transactional
 	public GenericApiResponse save(SystemUserDto systemUserDto) {
 
 		try {
@@ -32,19 +35,19 @@ public class UserServiceImpl implements UserService {
 				Role role = roleService.findRoleById(systemUserDto.getRoleId());
 
 				SystemUser systemUser = DtoToEntityUser.getUser(systemUserDto, role);
-				
+
 				// userRepository.save(systemUser);
-				
-				return new GenericApiResponse("", "", systemUser);
+
+				return new GenericApiResponse(CommonConstants.STATUS_SUCCESSFULL,
+						CommonConstants.USER_SUCCESSFULLY_CREATED, systemUser);
 
 			} else {
-
+				return new GenericApiResponse(CommonConstants.STATUS_FAILED,
+						CommonConstants.USERNAME_ALREADY_AVAILABLE);
 			}
 		} catch (Exception e) {
-
+			return new GenericApiResponse(CommonConstants.STATUS_FAILED, e.getMessage());
 		}
-
-		return null;
 	}
 
 }
