@@ -25,7 +25,7 @@ public class MemberServiceImpl implements MemberService {
 
 		memberRepository.save(member);
 
-		int i = 1 / 0;
+		//int i = 1 / 0;
 
 		Member member1 = new Member();
 		member1.setName("Lahiru");
