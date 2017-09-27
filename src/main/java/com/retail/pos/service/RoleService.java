@@ -7,5 +7,7 @@ public interface RoleService {
 	public void createRole(Role role);
 
 	public Role findRoleById(int roleId);
+	
+	public Role findRoleByName(String roleName);
 
 }
