@@ -24,10 +24,13 @@ public class AuthorityServiceImpl implements AuthorityService {
 	@Override
 	@Transactional
 	public GenericApiResponse getAllAuthorities() {
-
+		
 		try {
+			
 			List<AuthorityDto> authotiyList = authorityRepository.findAll().stream().map(EntityToDtoUser::getAuthorityDto).collect(Collectors.toList());
+			
 			return new GenericApiResponse(CommonConstants.STATUS_SUCCESSFULL, CommonConstants.STATUS_SUCCESSFULL, authotiyList);
+			
 		} catch (Exception e) {
 			return new GenericApiResponse(CommonConstants.STATUS_FAILED, e.getMessage());
 		}
