@@ -11,12 +11,16 @@ import com.retail.pos.dto.request.RoleAuthorityDto;
 import com.retail.pos.dto.request.SystemUserDto;
 import com.retail.pos.dto.response.GenericApiResponse;
 import com.retail.pos.service.RoleAuthorityService;
+import com.retail.pos.service.RoleService;
 import com.retail.pos.service.UserService;
 
 @RestController
 @RequestMapping("/admin")
 public class AdminController {
 
+	@Autowired
+	RoleService roleService;
+	
 	@Autowired
 	RoleAuthorityService roleAuthorityService;
 	
@@ -27,6 +31,12 @@ public class AdminController {
 	@RequestMapping(value="/roles", method=RequestMethod.POST)
 	public GenericApiResponse createRole(@RequestBody RoleAuthorityDto roleAuthorityDto) {
 		return roleAuthorityService.saveRoleAuthorities(roleAuthorityDto);
+	}
+	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	@RequestMapping(value="/roles", method=RequestMethod.GET)
+	public GenericApiResponse getAllRoles() {
+		return null;
 	}
 
 	@PreAuthorize("hasRole('ROLE_ADMIN')")

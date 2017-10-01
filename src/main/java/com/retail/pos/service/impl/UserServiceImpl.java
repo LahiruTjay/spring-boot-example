@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
 
 				SystemUser systemUser = DtoToEntityUser.getUser(systemUserDto, role);
 
-				// userRepository.save(systemUser);
+				userRepository.save(systemUser);
 
 				return new GenericApiResponse(CommonConstants.STATUS_SUCCESSFULL,
 						CommonConstants.USER_SUCCESSFULLY_CREATED, systemUser);
