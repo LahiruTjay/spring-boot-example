@@ -67,10 +67,3 @@ The above URL is to be called to get authentication. It is a POST method. Upon s
 The access_token needs to be saved by the client application, because to access the REST API endpoints, needs access_token. 
 
 In POSTMAN, REST API can be accessed via providing the http header as `Authorization` and it's value as `Bearer <access_token>`. Adding Java annotation @PreAuthorize ("hasRole('ROLE_ONE')"), specific roles (in our case authorities) can be given to controller level methods. So that only the users with the relevant roles can access the given controller method.
-
-
-#### FEEL FREE TO ASK ANY QUESTIONS :)
-
-
-
-
