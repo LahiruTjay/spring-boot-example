@@ -42,7 +42,7 @@ Client Application is considered as the client in the OAuth2 realm. We add clien
 INSERT INTO `oauth_client_details` (`client_id`, `scope`, `authorized_grant_types`, `authorities`, `autoapprove`) VALUES ('mobile_api_client', 'read', 'password,refresh_token', 'ROLE_CLIENT', 'true');
 ```
 
-> NOTE : Can have several clients with different grant types as well. This is to be disregarded.
+> NOTE : Can have several clients with different grant types as well.
 
 ### OAuth2 Authentication Process.
 
