@@ -1,4 +1,4 @@
-# POS Application
+# Spring Boot Example
 
 Point-Of-Sales Application development.
 
